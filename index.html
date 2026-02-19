@@ -6,181 +6,157 @@
 
 <title>PGR Battle — Official Download</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+// Website Icon
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* ---------- GLOBAL ---------- */
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:'Poppins',sans-serif;
 }
-
-html{scroll-behavior:smooth;}
 
 body{
-  background:#0f172a;
-  color:white;
-  overflow-x:hidden;
+ background:#020617;
+ color:white;
+ overflow-x:hidden;
 }
 
-/* glowing background */
+/* CHARACTER BACKGROUND */
 body::before{
-  content:"";
-  position:fixed;
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle,#22c55e55,transparent 70%);
-  top:-200px;
-  right:-200px;
-  filter:blur(120px);
-  z-index:-1;
+ content:"";
+ position:fixed;
+ inset:0;
+ background:
+   linear-gradient(rgba(2,6,23,0.85),rgba(2,6,23,0.95)),
+   url("https://i.pinimg.com/736x/da/30/4a/da304a2255f08fb542d54245d969a641.jpg");
+ background-size:cover;
+ background-position:center;
+ opacity:.35;
+ z-index:-2;
 }
 
-/* ---------- NAVBAR ---------- */
+/* neon glow */
+body::after{
+ content:"";
+ position:fixed;
+ width:700px;
+ height:700px;
+ background:radial-gradient(circle,#00f7ff55,transparent);
+ top:-200px;
+ left:-200px;
+ filter:blur(140px);
+ z-index:-1;
+ animation:float 6s infinite alternate;
+}
+
+@keyframes float{
+ from{transform:translateY(0);}
+ to{transform:translateY(40px);}
+}
+
+/* ---------- NAV ---------- */
 nav{
-  position:fixed;
-  width:100%;
-  padding:15px 40px;
-  background:rgba(15,23,42,0.6);
-  backdrop-filter:blur(10px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
+ position:fixed;
+ width:100%;
+ padding:18px 40px;
+ background:rgba(0,0,0,.4);
+ backdrop-filter:blur(10px);
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
 }
 
-nav h2{color:#22c55e;}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
+nav h2{
+ color:#00f7ff;
+ letter-spacing:2px;
 }
 
 /* ---------- HERO ---------- */
 .hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+ height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:20px;
 }
 
 .hero h1{
-  font-size:60px;
-  background:linear-gradient(to right,#22c55e,#3b82f6);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+ font-size:70px;
+ background:linear-gradient(90deg,#00f7ff,#ff00c8,#22c55e);
+ -webkit-background-clip:text;
+ -webkit-text-fill-color:transparent;
+ animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+ 0%{filter:hue-rotate(0deg);}
+ 100%{filter:hue-rotate(360deg);}
 }
 
 .hero p{
-  color:#cbd5e1;
-  margin-top:15px;
-  font-size:20px;
+ margin-top:15px;
+ color:#cbd5e1;
+ font-size:20px;
 }
 
-.btn{
-  margin-top:30px;
-  padding:15px 40px;
-  border-radius:50px;
-  background:linear-gradient(45deg,#22c55e,#16a34a);
-  color:white;
-  text-decoration:none;
-  font-size:18px;
-  box-shadow:0 0 25px rgba(34,197,94,0.6);
-  transition:.3s;
+/* DOWNLOAD BUTTON */
+.download{
+ margin-top:35px;
+ padding:16px 45px;
+ border-radius:50px;
+ text-decoration:none;
+ color:white;
+ font-size:20px;
+ background:linear-gradient(45deg,#ff00c8,#00f7ff);
+ box-shadow:0 0 25px #00f7ff;
+ transition:.3s;
 }
 
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 45px rgba(34,197,94,1);
+.download:hover{
+ transform:scale(1.12);
+ box-shadow:0 0 60px #ff00c8;
 }
 
-/* phone mockup */
-.phone{
-  margin-top:40px;
-  width:260px;
-  height:520px;
-  border-radius:35px;
-  background:#020617;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 50px #000;
-}
-
-/* ---------- SECTIONS ---------- */
+/* FEATURES */
 .section{
-  padding:80px 20px;
-  text-align:center;
+ padding:80px 20px;
+ text-align:center;
 }
 
-.section h2{
-  margin-bottom:40px;
-  font-size:32px;
-}
-
-/* cards */
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  max-width:1100px;
-  margin:auto;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:25px;
+ max-width:1100px;
+ margin:auto;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(15px);
-  padding:30px;
-  border-radius:20px;
-  transition:.3s;
+ background:rgba(255,255,255,0.06);
+ backdrop-filter:blur(15px);
+ padding:30px;
+ border-radius:18px;
+ transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+ transform:translateY(-12px) scale(1.03);
+ box-shadow:0 0 25px #00f7ff55;
 }
 
-/* screenshots */
-.carousel{
-  max-width:800px;
-  margin:auto;
-  overflow:hidden;
-  border-radius:20px;
-}
-
-.carousel img{
-  width:100%;
-}
-
-/* footer */
+/* FOOTER */
 footer{
-  padding:30px;
-  text-align:center;
-  color:#94a3b8;
-}
-
-/* popup */
-.popup{
-  position:fixed;
-  inset:0;
-  background:#000000aa;
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
-
-.popup-box{
-  background:#020617;
-  padding:30px;
-  border-radius:15px;
-  text-align:center;
+ text-align:center;
+ padding:30px;
+ color:#94a3b8;
 }
 
 </style>
@@ -188,110 +164,44 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <h2>PGR Battle</h2>
-  <div>
-    <a href="#features">Features</a>
-    <a href="#screens">Screenshots</a>
-    <a href="#download">Download</a>
-  </div>
+  <h2>PGR BATTLE</h2>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <h1>PGR Battle</h1>
-  <p>The Ultimate Tournament Management App</p>
 
-  <a id="download"
-     href="https://github.com/DakshDagar001/pgrbattle-website/releases/download/v1.0/PGRBattle.apk"
-     class="btn"
-     onclick="downloadClick()">
-     Download APK
-  </a>
+<h1>PGR Battle</h1>
 
-  <p style="margin-top:10px;">Downloads: <span id="count">0</span></p>
+<p>The Ultimate Free Fire Tournament Platform</p>
 
-  <div class="phone">App Preview</div>
+<a class="download"
+href="https://github.com/DakshDagar001/pgrbattle-website/releases/download/v1.0-alpha/PGR.Battle.apk"
+target="_blank">
+🚀 Download Alpha Build
+</a>
+
+<p style="margin-top:15px;font-size:14px;color:#94a3b8;">
+Alpha Testing Version • For Friends Only
+</p>
+
 </section>
 
-<!-- FEATURES -->
-<section id="features" class="section">
-<h2>Features</h2>
+<section class="section">
+
+<h2 style="margin-bottom:40px;">🔥 Features</h2>
 
 <div class="cards">
-<div class="card">⚡ Fast Tournament Setup</div>
-<div class="card">💳 Secure UPI Payments</div>
-<div class="card">🎮 Built for Esports</div>
-</div>
-</section>
-
-<!-- SCREENSHOTS -->
-<section id="screens" class="section">
-<h2>App Screenshots</h2>
-
-<div class="carousel">
-<img id="slide"
-src="https://via.placeholder.com/800x400/1e293b/22c55e?text=Screenshot+1">
+<div class="card">⚡ Lightning Fast Tournament Setup</div>
+<div class="card">💳 Secure UPI Entry System</div>
+<div class="card">🎮 Built for Competitive Gaming</div>
+<div class="card">🚀 Continuous Updates</div>
 </div>
 
-</section>
-
-<!-- CHANGELOG -->
-<section class="section">
-<h2>Changelog</h2>
-<p>Version 1.0 — Initial release with tournament & payment system.</p>
 </section>
 
 <footer>
-Developed by Daksh Dagar (DxDeveloper)
+@2026 PGR Battle. All rights reserved.
 </footer>
-
-<!-- INSTALL POPUP -->
-<div class="popup" id="popup">
-<div class="popup-box">
-<h3>How to Install</h3>
-<p>1. Download APK<br>
-2. Allow Unknown Sources<br>
-3. Install & Play 🎮</p>
-<br>
-<button onclick="closePopup()">Close</button>
-</div>
-</div>
-
-<script>
-
-/* download counter */
-function downloadClick(){
- let c = localStorage.getItem("d")||0;
- c++;
- localStorage.setItem("d",c);
- document.getElementById("count").innerText=c;
- document.getElementById("popup").style.display="flex";
-}
-
-document.getElementById("count").innerText=
-localStorage.getItem("d")||0;
-
-/* popup */
-function closePopup(){
- document.getElementById("popup").style.display="none";
-}
-
-/* screenshot slider */
-const imgs=[
-"https://via.placeholder.com/800x400/1e293b/22c55e?text=Screenshot+1",
-"https://via.placeholder.com/800x400/1e293b/3b82f6?text=Screenshot+2",
-"https://via.placeholder.com/800x400/1e293b/22c55e?text=Screenshot+3"
-];
-
-let i=0;
-setInterval(()=>{
- i=(i+1)%imgs.length;
- document.getElementById("slide").src=imgs[i];
-},3000);
-
-</script>
 
 </body>
 </html>
