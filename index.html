@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>PGR Battle — Official Download</title>
 
 <link rel="icon" href="favicon.ico">
@@ -12,45 +10,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* ===== GLOBAL ===== */
 body{
 margin:0;
 font-family:Poppins;
-background:#020617;
+background:#0a0f1f;
 color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* Animated gradient background */
 body::before{
 content:"";
 position:fixed;
 inset:0;
-background:
-linear-gradient(rgba(2,6,23,.85),rgba(2,6,23,.95)),
-url("https://i.pinimg.com/736x/da/30/4a/da304a2255f08fb542d54245d969a641.jpg");
-background-size:cover;
-background-position:center;
+background:linear-gradient(120deg,#0f172a,#1e293b,#0f172a);
+background-size:300% 300%;
+animation:bg 10s infinite alternate;
 z-index:-1;
 }
 
-/* NAVBAR */
-nav{
-display:flex;
-justify-content:space-between;
-padding:18px 40px;
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(10px);
-position:fixed;
-width:100%;
+@keyframes bg{
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
 }
 
-nav h2{
-color:#00f7ff;
+/* Glass card */
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+border-radius:20px;
+padding:40px;
+box-shadow:0 0 40px rgba(0,255,255,.2);
 }
 
-/* HERO */
+/* Hero */
 .hero{
 height:100vh;
 display:flex;
@@ -68,123 +61,107 @@ background:linear-gradient(90deg,#00f7ff,#ff00c8);
 -webkit-text-fill-color:transparent;
 }
 
-.download{
+.download-btn{
 margin-top:30px;
 padding:18px 50px;
 border-radius:50px;
 font-size:22px;
 background:linear-gradient(45deg,#ff00c8,#00f7ff);
-text-decoration:none;
 color:white;
-box-shadow:0 0 35px #00f7ff;
+text-decoration:none;
+box-shadow:0 0 40px #00f7ff;
 transition:.3s;
 }
 
-.download:hover{
+.download-btn:hover{
 transform:scale(1.1);
 }
 
-/* FEATURES */
-.section{
-padding:80px 20px;
-text-align:center;
+.counter{
+margin-top:20px;
+font-size:18px;
+color:#94a3b8;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1100px;
+/* Slider */
+.slider{
+display:flex;
+overflow:hidden;
+max-width:800px;
 margin:auto;
 }
 
-.card{
-background:rgba(255,255,255,0.06);
-padding:30px;
-border-radius:15px;
-transition:.3s;
+.slide{
+min-width:100%;
+transition:1s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #00f7ff55;
+.slide img{
+width:100%;
+border-radius:20px;
 }
 
-/* STEPS */
-.steps{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-}
-
-.step{
+/* Popup */
+.popup{
+position:fixed;
+bottom:30px;
+right:30px;
 background:#0f172a;
-padding:25px;
+padding:20px;
 border-radius:15px;
-width:220px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-color:#94a3b8;
+display:none;
+box-shadow:0 0 20px #00f7ff;
 }
 
 </style>
 </head>
-
 <body>
 
-<nav>
-<h2>PGR BATTLE</h2>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-
+<section class="hero glass">
 <h1>PGR Battle</h1>
-<p>Ultimate Free Fire Tournament Platform</p>
+<p>Next Level Free Fire Tournament Platform</p>
 
-<a class="download"
-href="https://github.com/DakshDagar001/pgrbattle-website/releases/download/v1.0-alpha/PGRBattle.apk">
-🚀 Download APK (15MB)
-</a>
+<a href="download.html" class="download-btn">Download Now</a>
 
-<p>Alpha Testing Version • Safe Download</p>
-
+<div class="counter">
+🔥 <span id="downloads">1200</span> Downloads
+</div>
 </section>
 
-<!-- FEATURES -->
-<section class="section">
-<h2>🔥 Features</h2>
+<section class="glass" style="margin:50px;">
+<h2 style="text-align:center;">App Screenshots</h2>
 
-<div class="cards">
-<div class="card">⚡ Instant Tournament Creation</div>
-<div class="card">💳 Secure UPI Payments</div>
-<div class="card">🎮 Esports Ready Platform</div>
-<div class="card">🚀 Lightning Fast Servers</div>
+<div class="slider" id="slider">
+<div class="slide"><img src="https://via.placeholder.com/800x500"></div>
+<div class="slide"><img src="https://via.placeholder.com/800x500/ff00c8"></div>
+<div class="slide"><img src="https://via.placeholder.com/800x500/00f7ff"></div>
+</div>
+</section>
+
+<div class="popup" id="installPopup">
+⚡ Tap Download and install the APK manually.
 </div>
 
-</section>
+<script>
+/* Screenshot slider */
+let index=0;
+setInterval(()=>{
+index++;
+if(index>2) index=0;
+document.getElementById("slider").style.transform=`translateX(-${index*100}%)`;
+},3000);
 
-<!-- HOW IT WORKS -->
-<section class="section">
-<h2>🎯 How It Works</h2>
+/* Fake download counter animation */
+setInterval(()=>{
+let el=document.getElementById("downloads");
+el.innerText=parseInt(el.innerText)+1;
+},5000);
 
-<div class="steps">
-<div class="step">1️⃣ Download App</div>
-<div class="step">2️⃣ Create Account</div>
-<div class="step">3️⃣ Join Tournament</div>
-<div class="step">4️⃣ Win Matches</div>
-</div>
-
-</section>
-
-<footer>
-© 2026 PGR Battle • support@pgrbattle.me
-</footer>
+/* Install popup */
+setTimeout(()=>{
+document.getElementById("installPopup").style.display="block";
+},4000);
+</script>
 
 </body>
 </html>
