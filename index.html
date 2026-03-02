@@ -129,6 +129,54 @@ transform:translateY(-10px);
 box-shadow:0 0 25px #00eaff55;
 }
 
+/* SCREENSHOT CAROUSEL */
+.screenshot-section{
+text-align:center;
+margin:100px auto;
+padding:20px;
+}
+
+.screenshot-section h2{
+margin-bottom:40px;
+font-size:28px;
+background:linear-gradient(90deg,#00eaff,#ff00c8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.carousel-container{
+overflow-x:auto;
+scroll-behavior:smooth;
+padding-bottom:10px;
+}
+
+.carousel{
+display:flex;
+gap:25px;
+padding:10px 20px;
+}
+
+.carousel img{
+height:450px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,234,255,.3);
+transition:0.4s;
+}
+
+.carousel img:hover{
+transform:scale(1.05);
+box-shadow:0 0 40px #00eaff;
+}
+
+/* Hide scrollbar but keep scroll */
+.carousel-container::-webkit-scrollbar{
+display:none;
+}
+.carousel-container{
+-ms-overflow-style:none;
+scrollbar-width:none;
+}
+
 footer{
 text-align:center;
 padding:40px;
@@ -175,6 +223,23 @@ Download PGR BATTLE
 
 </section>
 
+  <!-- SCREENSHOT SECTION -->
+<section class="screenshot-section">
+<h2>📱 App Screenshots</h2>
+
+<div class="carousel-container">
+  <div class="carousel">
+
+    <img src="screenshot1.png" alt="Screenshot 1">
+    <img src="screenshot2.png" alt="Screenshot 2">
+    <img src="screenshot3.png" alt="Screenshot 3">
+    <img src="screenshot4.png" alt="Screenshot 4">
+    <img src="screenshot5.png" alt="Screenshot 5">
+
+  </div>
+</div>
+</section>
+  
 <footer>
 © 2026 PGR Battle • support@pgrbattle.me
 </footer>
