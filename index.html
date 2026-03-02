@@ -129,7 +129,8 @@ transform:translateY(-10px);
 box-shadow:0 0 25px #00eaff55;
 }
 
-/* SCREENSHOT CAROUSEL */
+/* SCREENSHOT SLIDER */
+
 .screenshot-section{
 text-align:center;
 margin:100px auto;
@@ -144,37 +145,36 @@ background:linear-gradient(90deg,#00eaff,#ff00c8);
 -webkit-text-fill-color:transparent;
 }
 
-.carousel-container{
-overflow-x:auto;
-scroll-behavior:smooth;
-padding-bottom:10px;
+.carousel-wrapper{
+width:100%;
+overflow:hidden;
+max-width:900px;
+margin:auto;
 }
 
-.carousel{
+.carousel-track{
 display:flex;
-gap:25px;
-padding:10px 20px;
+transition:transform 0.8s ease-in-out;
 }
 
-.carousel img{
+.slide{
+min-width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.slide img{
 height:450px;
 border-radius:20px;
-box-shadow:0 0 25px rgba(0,234,255,.3);
-transition:0.4s;
+box-shadow:0 0 30px rgba(0,234,255,.3);
 }
 
-.carousel img:hover{
-transform:scale(1.05);
-box-shadow:0 0 40px #00eaff;
-}
-
-/* Hide scrollbar but keep scroll */
-.carousel-container::-webkit-scrollbar{
-display:none;
-}
-.carousel-container{
--ms-overflow-style:none;
-scrollbar-width:none;
+.slide p{
+margin-top:15px;
+font-size:20px;
+font-weight:600;
+color:#cbd5e1;
 }
 
 footer{
@@ -223,26 +223,62 @@ Download PGR BATTLE
 
 </section>
 
-  <!-- SCREENSHOT SECTION -->
+<!-- SCREENSHOT CAROUSEL -->
 <section class="screenshot-section">
+
 <h2>📱 App Screenshots</h2>
 
-<div class="carousel-container">
-  <div class="carousel">
+<div class="carousel-wrapper">
+  <div class="carousel-track" id="carouselTrack">
 
-    <img src="screenshot1.png" alt="Screenshot 1">
-    <img src="screenshot2.png" alt="Screenshot 2">
-    <img src="screenshot3.png" alt="Screenshot 3">
-    <img src="screenshot4.png" alt="Screenshot 4">
-    <img src="screenshot5.png" alt="Screenshot 5">
+    <div class="slide">
+      <img src="screenshot1.png">
+      <p>Best App</p>
+    </div>
+
+    <div class="slide">
+      <img src="screenshot2.png">
+      <p>10+ Modes</p>
+    </div>
+
+    <div class="slide">
+      <img src="screenshot3.png">
+      <p>Daily Tournaments</p>
+    </div>
+
+    <div class="slide">
+      <img src="screenshot4.png">
+      <p>Clean UI</p>
+    </div>
+
+    <div class="slide">
+      <img src="screenshot5.png">
+      <p> </p>
+    </div>
 
   </div>
 </div>
+
 </section>
   
 <footer>
 © 2026 PGR Battle • support@pgrbattle.me
 </footer>
+<script>
 
+/* AUTO SLIDER */
+let index = 0;
+const track = document.getElementById("carouselTrack");
+const slides = document.querySelectorAll(".slide");
+
+setInterval(() => {
+    index++;
+    if(index >= slides.length){
+        index = 0;
+    }
+    track.style.transform = `translateX(-${index * 100}%)`;
+}, 2000); // change slide every 3 sec
+
+</script>
 </body>
 </html>
