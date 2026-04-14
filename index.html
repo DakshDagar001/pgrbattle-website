@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PGR Battle — Official Download</title>
-
-<link rel="icon" href="favicon.ico">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 /* ===== GLOBAL ===== */
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Poppins;
 background:#050816;
 color:white;
 overflow-x:hidden;
 }
 
-/* Gaming background */
+/* BACKGROUND */
 body::before{
 content:"";
 position:fixed;
@@ -35,151 +37,114 @@ background-position:center;
 z-index:-2;
 }
 
-/* neon glow */
-body::after{
-content:"";
-position:fixed;
-width:600px;
-height:600px;
-background:radial-gradient(circle,#00eaff55,transparent);
-top:-150px;
-left:-150px;
-filter:blur(140px);
-z-index:-1;
-}
-
-/* HERO SECTION */
+/* HERO */
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px 20px;
+}
+
+.container{
+max-width:900px;
+width:100%;
 }
 
 /* LOGO */
 .logo{
-width:130px;
-margin-bottom:25px;
-filter:drop-shadow(0 0 20px #00eaff);
+width:140px;
+margin:20px auto;
+display:block;
+filter:drop-shadow(0 0 15px #00eaff);
 }
 
 /* TITLE */
 .hero h1{
-font-size:44px;
+font-size:40px;
 font-weight:900;
 line-height:1.4;
-max-width:900px;
 background:linear-gradient(90deg,#00eaff,#ff00c8);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-/* DESCRIPTION */
+/* TEXT */
 .hero p{
-margin-top:18px;
+margin-top:15px;
 font-size:18px;
 color:#cbd5e1;
-max-width:720px;
 line-height:1.6;
 }
 
-/* DOWNLOAD BUTTON */
+/* BUTTON */
 .download-btn{
-margin-top:35px;
-padding:18px 55px;
-font-size:20px;
+display:inline-block;
+margin-top:30px;
+padding:16px 40px;
+font-size:18px;
 font-weight:700;
-border-radius:60px;
+border-radius:50px;
 background:linear-gradient(45deg,#ff00c8,#00eaff);
 color:white;
 text-decoration:none;
-box-shadow:0 0 30px rgba(0,234,255,.6);
 transition:.3s;
 }
 
 .download-btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 60px #00eaff;
+transform:scale(1.05);
 }
 
 /* FEATURES */
 .features{
-margin:80px auto;
 max-width:1100px;
+margin:60px auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 padding:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(15px);
-padding:30px;
-border-radius:18px;
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:15px;
 text-align:center;
-transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #00eaff55;
-}
-
-/* SCREENSHOT SLIDER */
-
+/* SCREENSHOTS */
 .screenshot-section{
 text-align:center;
-margin:100px auto;
-padding:20px;
-}
-
-.screenshot-section h2{
-margin-bottom:40px;
-font-size:28px;
-background:linear-gradient(90deg,#00eaff,#ff00c8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+margin:80px auto;
 }
 
 .carousel-wrapper{
-width:100%;
 overflow:hidden;
-max-width:900px;
+max-width:800px;
 margin:auto;
 }
 
 .carousel-track{
 display:flex;
-transition:transform 0.8s ease-in-out;
+transition:0.6s;
 }
 
 .slide{
 min-width:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
 }
 
 .slide img{
-height:450px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(0,234,255,.3);
+width:100%;
+max-height:420px;
+object-fit:cover;
+border-radius:15px;
 }
 
-.slide p{
-margin-top:15px;
-font-size:20px;
-font-weight:600;
-color:#cbd5e1;
-}
-
+/* FOOTER */
 footer{
 text-align:center;
-padding:40px;
+padding:30px;
 color:#94a3b8;
 }
 
@@ -189,110 +154,61 @@ color:#94a3b8;
 <body>
 
 <section class="hero">
+  <div class="container">
 
-<!-- TITLE -->
-<h1 class="title">
-INDIA'S  TOP BEST FREE FIRE TOURNAMENT APP  PGR  BATTLE
-</h1>
+    <h1>INDIA'S TOP BEST FREE FIRE TOURNAMENT APP PGR BATTLE</h1>
 
+    <img src="20260303_100149.png" class="logo">
 
-<!-- APP LOGO -->
-<img src="20260303_100149.png" class="logo" alt="PGR Battle Logo">
+    <p>
+      Join PGR Battle to play daily Free Fire matches, win real cash, and become a champion.
+    </p>
 
-<style>
-.logo {
-  width: 100%;
-  max-width: 1024px;
-  height: auto;
-  display: block;
-  margin: auto;
-}
-</style>
+    <a class="download-btn"
+    href="https://github.com/DakshDagar001/pgrbattle-website/releases/download/v1.0-alpha/PGRBattle.apk">
+    Download PGR BATTLE
+    </a>
 
-  <!-- DESCRIPTION -->
-<p class="text">
-Join Now PGR Battle To Play Daily Free Fire Matches, Win Real Cash, And Become A Champion.
-</p>
-
-<!-- DOWNLOAD BUTTON -->
-<a class="download-btn"
-href="https://github.com/DakshDagar001/pgrbattle-website/releases/download/v1.0-alpha/PGRBattle.apk">
-Download PGR BATTLE
-</a>
-
+  </div>
 </section>
 
-<!-- FEATURES SECTION -->
 <section class="features">
-
-<div class="card">⚡ Daily Free Fire Matches</div>
-<div class="card">💰 Win Real Cash Rewards</div>
-<div class="card">🛡 100% Fair Play System</div>
-<div class="card">🚀 Instant Withdrawals</div>
-
+  <div class="card">⚡ Daily Free Fire Matches</div>
+  <div class="card">💰 Win Real Cash Rewards</div>
+  <div class="card">🛡 100% Fair Play</div>
+  <div class="card">🚀 Instant Withdrawals</div>
 </section>
 
-<!-- SCREENSHOT CAROUSEL -->
 <section class="screenshot-section">
 
-<h2>📱 App Screenshots</h2>
+<h2>App Screenshots</h2>
 
 <div class="carousel-wrapper">
-  <div class="carousel-track" id="carouselTrack">
+  <div class="carousel-track" id="track">
 
-    <div class="slide">
-      <img src="screenshot2.jpg">
-      <p>10+ Modes</p>
-    </div>
-
-    <div class="slide">
-      <img src="screenshot1.jpg">
-      <p>Match Section</p>
-    </div>
-
-    <div class="slide">
-      <img src="screenshot3.jpg">
-      <p>Daily Tournaments</p>
-    </div>
-
-    <div class="slide">
-      <img src="screenshot4.jpg">
-      <p>Tournament Info</p>
-    </div>
-
-    <div class="slide">
-      <img src="screenshot5.jpg">
-      <p>Profile</p>
-    </div>
-
-    <div class="slide">
-      <img src="Screenshot_20260304-121710.jpg">
-      <p>Leaderboard</p>
-    </div>
+    <div class="slide"><img src="screenshot1.jpg"></div>
+    <div class="slide"><img src="screenshot2.jpg"></div>
+    <div class="slide"><img src="screenshot3.jpg"></div>
 
   </div>
 </div>
 
 </section>
-  
-<footer>
-© 2026 PGR Battle • support@pgrbattle.me
-</footer>
-<script>
 
-/* AUTO SLIDER */
-let index = 0;
-const track = document.getElementById("carouselTrack");
+<footer>
+© 2026 PGR Battle
+</footer>
+
+<script>
+let i = 0;
+const track = document.getElementById("track");
 const slides = document.querySelectorAll(".slide");
 
-setInterval(() => {
-    index++;
-    if(index >= slides.length){
-        index = 0;
-    }
-    track.style.transform = `translateX(-${index * 100}%)`;
-}, 4000); // change slide every 4 sec
-
+setInterval(()=>{
+  i = (i + 1) % slides.length;
+  track.style.transform = `translateX(-${i*100}%)`;
+},3000);
 </script>
+
 </body>
 </html>
