@@ -1,214 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <title>PGR Battle — Official Free Fire Tournament App</title>
+  <meta name="description" content="Join PGR Battle to play daily Free Fire matches, win real cash rewards, and become a champion. India's top esports tournament app.">
+  <meta name="keywords" content="PGR Battle, Free Fire Tournament, Esports App, Win Cash, Gaming">
+  <meta name="author" content="PGR Battle">
+  <link rel="canonical" href="https://pgrbattle.com/">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pgrbattle.com/">
+  <meta property="og:title" content="PGR Battle — Official Free Fire Tournament App">
+  <meta property="og:description" content="Play daily Free Fire matches and win real cash rewards. Download now!">
+  <meta property="og:image" content="https://pgrbattle.com/logo.png">
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<title>PGR Battle — Official Download</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-/* ===== GLOBAL ===== */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Poppins;
-background:#050816;
-color:white;
-overflow-x:hidden;
-}
-
-/* BACKGROUND */
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-linear-gradient(rgba(5,8,22,.92),rgba(5,8,22,.96)),
-url("https://i.pinimg.com/736x/da/30/4a/da304a2255f08fb542d54245d969a641.jpg");
-background-size:cover;
-background-position:center;
-z-index:-2;
-}
-
-/* HERO */
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px 20px;
-}
-
-.container{
-max-width:900px;
-width:100%;
-}
-
-/* LOGO */
-.logo{
-width:140px;
-margin:20px auto;
-display:block;
-filter:drop-shadow(0 0 15px #00eaff);
-}
-
-/* TITLE */
-.hero h1{
-font-size:40px;
-font-weight:900;
-line-height:1.4;
-background:linear-gradient(90deg,#00eaff,#ff00c8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* TEXT */
-.hero p{
-margin-top:15px;
-font-size:18px;
-color:#cbd5e1;
-line-height:1.6;
-}
-
-/* BUTTON */
-.download-btn{
-display:inline-block;
-margin-top:30px;
-padding:16px 40px;
-font-size:18px;
-font-weight:700;
-border-radius:50px;
-background:linear-gradient(45deg,#ff00c8,#00eaff);
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-.download-btn:hover{
-transform:scale(1.05);
-}
-
-/* FEATURES */
-.features{
-max-width:1100px;
-margin:60px auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:20px;
-}
-
-.card{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-text-align:center;
-}
-
-/* SCREENSHOTS */
-.screenshot-section{
-text-align:center;
-margin:80px auto;
-}
-
-.carousel-wrapper{
-overflow:hidden;
-max-width:800px;
-margin:auto;
-}
-
-.carousel-track{
-display:flex;
-transition:0.6s;
-}
-
-.slide{
-min-width:100%;
-}
-
-.slide img{
-width:100%;
-max-height:420px;
-object-fit:cover;
-border-radius:15px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:30px;
-color:#94a3b8;
-}
-
-</style>
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="container">
+  <!-- Animated Background -->
+  <div class="animated-bg" aria-hidden="true"></div>
 
-    <h1>INDIA'S TOP BEST FREE FIRE TOURNAMENT APP PGR BATTLE</h1>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="PGR Battle Logo" width="40" height="40">
+        PGR BATTLE
+      </a>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
 
-    <img src="20260303_100149.png" class="logo">
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#screenshots">App Preview</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <p>
-      Join PGR Battle to play daily Free Fire matches, win real cash, and become a champion.
-    </p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-content reveal active">
+        <div class="hero-logo-wrapper">
+          <img src="20260303_100149.png" alt="PGR Battle Mascot" class="hero-logo" width="180" height="180" loading="eager">
+        </div>
+        
+        <h1>India's Top <span class="text-gradient">Free Fire</span> Tournament App</h1>
+        
+        <p>Join PGR Battle to play daily Free Fire matches, win real cash, and rise to the top as a champion.</p>
+        
+        <div class="hero-buttons">
+          <a href="download.html" class="btn btn-primary" aria-label="Download PGR Battle App">
+            Download Now
+          </a>
+          <a href="#features" class="btn btn-outline">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <a class="download-btn"
-    href="https://github.com/DakshDagar001/pgrbattle-website/releases/download/v1.0-alpha/PGRBattle.apk">
-    Download PGR BATTLE
-    </a>
+    <!-- Features Section -->
+    <section class="section-padding" id="features">
+      <div class="container reveal">
+        <div class="text-center">
+          <h2 class="section-title">Why Play <span class="text-gradient">With Us?</span></h2>
+          <p class="section-subtitle">Experience the best competitive gaming platform with unbeatable features and security.</p>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-card glass-card">
+            <div class="feature-icon" aria-hidden="true">⚡</div>
+            <h3>Daily Matches</h3>
+            <p>New tournaments hosted every single day. Always a match waiting for you.</p>
+          </div>
+          
+          <div class="feature-card glass-card">
+            <div class="feature-icon" aria-hidden="true">💰</div>
+            <h3>Real Cash Rewards</h3>
+            <p>Win matches and instantly earn real cash directly to your wallet.</p>
+          </div>
+          
+          <div class="feature-card glass-card">
+            <div class="feature-icon" aria-hidden="true">🛡️</div>
+            <h3>100% Fair Play</h3>
+            <p>Strict anti-cheat monitoring ensures a fair and competitive environment.</p>
+          </div>
+          
+          <div class="feature-card glass-card">
+            <div class="feature-icon" aria-hidden="true">🚀</div>
+            <h3>Instant Withdrawals</h3>
+            <p>Withdraw your winnings securely via UPI or bank transfer in seconds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Tournament Highlights -->
+    <section class="section-padding" id="highlights">
+      <div class="container reveal">
+        <div class="highlight-box">
+          <div class="highlight-content">
+            <h2 class="section-title">The Ultimate <span class="text-gradient">Arena</span></h2>
+            <p class="text-muted">Join thousands of players competing daily. Build your squad, enter tournaments, and claim the top spot on the leaderboards.</p>
+            
+            <div class="highlight-stats">
+              <div class="stat-item">
+                <h4>10K+</h4>
+                <p>Active Players</p>
+              </div>
+              <div class="stat-item">
+                <h4>₹5 Lakh+</h4>
+                <p>Rewards Distributed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="features">
-  <div class="card">⚡ Daily Free Fire Matches</div>
-  <div class="card">💰 Win Real Cash Rewards</div>
-  <div class="card">🛡 100% Fair Play</div>
-  <div class="card">🚀 Instant Withdrawals</div>
-</section>
+    <!-- Screenshots Carousel -->
+    <section class="section-padding" id="screenshots">
+      <div class="container reveal">
+        <div class="text-center">
+          <h2 class="section-title">App <span class="text-gradient">Preview</span></h2>
+          <p class="section-subtitle">Sleek, intuitive, and designed for true gamers.</p>
+        </div>
 
-<section class="screenshot-section">
+        <div class="carousel-container" role="region" aria-roledescription="carousel" aria-label="App Screenshots">
+          <div class="carousel-track" id="carouselTrack" aria-live="polite">
+            
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <img src="screenshot1.jpg" alt="PGR Battle Homescreen showing active tournaments" loading="lazy">
+            </div>
+            
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <img src="screenshot2.jpg" alt="Tournament Details and Prize Pool view" loading="lazy">
+            </div>
+            
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <img src="screenshot3.jpg" alt="Wallet and fast withdrawal options" loading="lazy">
+            </div>
+            
+          </div>
+          
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" aria-label="Previous slide">❮</button>
+            <button class="carousel-btn next" aria-label="Next slide">❯</button>
+          </div>
+          
+          <div class="carousel-indicators" aria-label="Carousel slide selectors">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2>App Screenshots</h2>
+    <!-- FAQ Section -->
+    <section class="section-padding" id="faq">
+      <div class="container reveal">
+        <div class="text-center">
+          <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+          <p class="section-subtitle">Got questions? We've got answers.</p>
+        </div>
+        
+        <div class="faq-grid">
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is PGR Battle free to download?
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! The app is completely free to download and install. Some premium tournaments may have an entry fee, but we also host free daily scrims.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I withdraw my winnings?
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can easily withdraw your balance to your bank account via UPI (Google Pay, PhonePe, Paytm). Withdrawals are processed instantly.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is my account and money secure?
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. We use industry-standard encryption to protect your data and integrate with top-tier payment gateways to ensure 100% secure transactions.</p>
+            </div>
+          </div>
 
-<div class="carousel-wrapper">
-  <div class="carousel-track" id="track">
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="slide"><img src="screenshot1.jpg"></div>
-    <div class="slide"><img src="screenshot2.jpg"></div>
-    <div class="slide"><img src="screenshot3.jpg"></div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <a href="index.html" class="nav-brand" style="margin-bottom: 20px;">
+            <img src="logo.png" alt="PGR Battle Logo" width="30" height="30">
+            PGR BATTLE
+          </a>
+          <p class="text-muted" style="font-size: 0.9rem;">The premier Free Fire tournament platform in India. Compete, win, and rise to glory.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="download.html">Download App</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="mailto:support@pgrbattle.com">Contact Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 PGR Battle. All rights reserved. Free Fire is a registered trademark of Garena.</p>
+      </div>
+    </div>
+  </footer>
 
-  </div>
-</div>
-
-</section>
-
-<footer>
-© 2026 PGR Battle
-</footer>
-
-<script>
-let i = 0;
-const track = document.getElementById("track");
-const slides = document.querySelectorAll(".slide");
-
-setInterval(()=>{
-  i = (i + 1) % slides.length;
-  track.style.transform = `translateX(-${i*100}%)`;
-},3000);
-</script>
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
 
 </body>
 </html>
