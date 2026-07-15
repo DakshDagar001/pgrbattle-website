@@ -387,12 +387,13 @@ body {
 /* ===== SCREENSHOT CAROUSEL ===== */
 .carousel-container {
   position: relative;
-  max-width: 900px;
+  max-width: 320px; /* Mobile phone width */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   border: 1px solid var(--glass-border);
+  background: var(--bg-darker);
 }
 
 .carousel-track {
@@ -403,17 +404,12 @@ body {
 .carousel-slide {
   min-width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.5); /* Adds a nice backdrop if image doesn't fill width */
 }
 
 .carousel-slide img {
   width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: contain; 
+  aspect-ratio: 9/16;
+  object-fit: cover;
   display: block;
 }
 
